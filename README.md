@@ -52,3 +52,34 @@ Additional Information
 
 The repository is structured modularly to support scalability and ease of maintenance.
 All necessary instructions for environment setup and code execution are provided in this document.
+
+
+You can add a section like the following to your README file:
+
+---
+
+## Configuration Instructions
+
+The code currently uses absolute paths to access dataset files (for example, in `main.py` and other modules). To ensure the project runs correctly on your system, please follow these instructions:
+
+1. Using Relative Paths (Recommended):  
+   - Create a folder named `datasets` in the root directory of the repository.
+   - Place all required dataset files (e.g., `dataset.csv.zip`, `archive (1).zip`, etc.) into this `datasets` folder.
+   - Update the file paths in your code from absolute paths (e.g., `C:\Users\manda\OneDrive\Desktop\Enterprise_Automation\datasets\dataset.csv.zip`) to relative paths (e.g., `./datasets/dataset.csv.zip`).
+
+2. If You Prefer Absolute Paths:  
+   - Locate each instance in the code where a dataset path is defined.
+   - Replace the existing path with the full path to the dataset on your local machine.
+   - For example, update:
+     ```python
+     invoice_zip_path = r"C:\Users\manda\OneDrive\Desktop\Enterprise_Automation\datasets\dataset.csv.zip"
+     ```
+     to:
+     ```python
+     invoice_zip_path = r"Your\Local\Path\to\datasets\dataset.csv.zip"
+     ```
+   - Ensure that the paths you enter correctly point to the location of the dataset files on your computer.
+
+By following these instructions, you can ensure that the code locates the necessary datasets regardless of whether you're using relative or absolute paths.
+
+---
